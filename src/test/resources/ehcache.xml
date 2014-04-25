@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" name="InventoryCustomCache"
+         defaultTransactionTimeoutInSeconds="900">
+    <!--<terracottaConfig url="localhost:9510"/> -->
+    <cache name="xaCacheOne"
+           eternal="true" maxElementsInMemory="1000000"
+           overflowToDisk="false" transactionalMode="xa" statistics="true" copyOnRead="true" copyOnWrite="true">
+        <!-- <terracotta consistency="strong"/> -->
+        <cacheWriter writeMode="write-behind" notifyListenersOnException="true" maxWriteDelay="1" rateLimitPerSecond="5"
+                     writeCoalescing="true" writeBatching="true" writeBatchSize="20"
+                     retryAttempts="2" retryAttemptDelaySeconds="2">
+            <cacheWriterFactory class="net.sf.ehcache.test.SimpleWriterFactory"/>
+        </cacheWriter>
+    </cache>
+
+</ehcache>
