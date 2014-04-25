@@ -19,7 +19,8 @@ import java.util.*;
 /**
  * Created by lorban on 24/04/14.
  * Updated by vinay on 25/04/14.
- * only put() and putAll() is supported by this decorator ( still experimental )
+ * only put() & putAll() is supported by this decorator ( still experimental )
+ * supports get() as well
  */
 public class RawTxCache extends EhcacheDecoratorAdapter {
 
