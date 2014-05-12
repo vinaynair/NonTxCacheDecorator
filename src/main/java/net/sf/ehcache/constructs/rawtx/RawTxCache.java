@@ -196,9 +196,6 @@ public class RawTxCache extends EhcacheDecoratorAdapter {
         throw new UnsupportedOperationException();
     }
 
-    @Override
-    public int getSizeBasedOnAccuracy(int statisticsAccuracy) throws IllegalArgumentException, IllegalStateException, CacheException {
-        throw new UnsupportedOperationException();
-    }
+
 
 }
